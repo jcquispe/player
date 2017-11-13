@@ -44,7 +44,7 @@
                     $("#10203040302010").html(data.data[0].track.artist);
                     $("#mnbvcxzqaz").html(data.data[0].track.title);
                     
-                    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=16fe44aaa6f35d5755a08eb62f371994&artist="+(data.data[0].track.artist.trim()).replace(/\s+/g, "%20")+"&track="+(data.data[0].track.title.trim()).replace(/\s+/g, "%20")+"&format=json", function(data) {
+                    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=16fe44aaa6f35d5755a08eb62f371994&artist="+(data.data[0].track.artist.trim()).replace(/\s+/g, "%20")+"&track="+(data.data[0].track.title.trim()).replace(/\s+/g, "%20")+"&format=json", function(data) {
                         if(data.track.album.hasOwnProperty('image')){
                             $.each(data.track.album.image, function(i, item) {
                                 if(item.size == "large"){
