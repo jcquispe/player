@@ -39,7 +39,7 @@
             
         });
         function update(){
-            $.getJSON('http://icecasthd.net:2199/rpc/fmlapaz/streaminfo.get', function(data) {
+            $.getJSON('https://icecasthd.net:2199/rpc/fmlapaz/streaminfo.get', function(data) {
                 if($("mnbvcxzqaz").html() !== data.data[0].track.title){
                     $("#10203040302010").html(data.data[0].track.artist);
                     $("#mnbvcxzqaz").html(data.data[0].track.title);
