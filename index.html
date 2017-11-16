@@ -57,7 +57,7 @@
 
         function update(){
             $.getJSON('http://icecasthd.net:2199/rpc/fmlapaz/streaminfo.get', function(data) {
-                if($("mnbvcxzqaz").html() !== data.data[0].track.title){
+                if($("#mnbvcxzqaz").html() !== data.data[0].track.title){
                     $("#poiuytrewq").attr("src", "http://lapaz.fm/img/player/lp.png");
                     $("#10203040302010").html(data.data[0].track.artist);
                     $("#mnbvcxzqaz").html(data.data[0].track.title);
@@ -77,15 +77,8 @@
                 }
             });
         }
-
-        function playButton(){
-          
-        }
-
-        window.SetVolume = function(val)
-        {
+        window.SetVolume = function(val){
             var player = document.getElementById('player');
-            
             player.volume = val / 100;
         }
     });
