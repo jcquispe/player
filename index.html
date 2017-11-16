@@ -22,9 +22,9 @@
         });
         $("#yalp").mouseleave(function(){
            if(playing){
-               $( this ).attr("src", "http://lapaz.fm/img/player/p1.png");
+               $( this ).attr("src", "http://lapaz.fm/img/player/s1.png");
            }else{
-                $( this ).attr("src", "http://lapaz.fm/img/player/s1.png");
+                $( this ).attr("src", "http://lapaz.fm/img/player/p1.png");
            }
         });
         $("#yalp").click(function(){
@@ -58,6 +58,7 @@
         function update(){
             $.getJSON('http://icecasthd.net:2199/rpc/fmlapaz/streaminfo.get', function(data) {
                 if($("mnbvcxzqaz").html() !== data.data[0].track.title){
+                    $("#poiuytrewq").attr("src", "http://lapaz.fm/img/player/lp.png");
                     $("#10203040302010").html(data.data[0].track.artist);
                     $("#mnbvcxzqaz").html(data.data[0].track.title);
                     
@@ -73,7 +74,6 @@
                           $("#poiuytrewq").attr('src', "");  
                         }
                     });
-                    //$("#poiuytrewq").attr("src", data.data[0].track.imageurl);
                 }
             });
         }
@@ -91,19 +91,19 @@
     });
     
 </script>
-<div class="col-md-12 col-sm-12 col-xs-12" style="position:fixed; bottom:0; background: #2a5081;">
+<div class="col-md-12 col-sm-12 col-xs-12" style="position:fixed; bottom:0; background: #2a5081; height: 80px;">
     <audio id="player" src="http://195.154.182.222:45019/live" autoplay></audio>
     <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
-        <img id="yalp" style="width:100%;" src="http://lapaz.fm/img/player/s1.png"></img>
+        <img id="yalp" style="height:100%;" src="http://lapaz.fm/img/player/s1.png"></img>
         
     </div>
     <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
-        <img id="poiuytrewq" style="width:100%;" src="http://lapaz.fm/img/player/lp.png"></img>
+        <img id="poiuytrewq" style="height:100%;" src="http://lapaz.fm/img/player/lp.png"></img>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-7  col-xs-5" style="color: #fff; height:100%;">
         <p style="font-size:14px; margin:0 !important;">FM La Paz</p>
         <hr style="color: #5CA4FF !important; margin: 5px !important;">
-        <span style="font-size:22px;" id="10203040302010">ARTISTA</span> - 
+        <span style="font-size:20px;" id="10203040302010">ARTISTA</span> - 
         <span style="font-size:20px;" id="mnbvcxzqaz">Canci&oacute;n</span><br>
         <img id="vol" style="width:20px; float:left;" src="http://lapaz.fm/img/player/v1.png"></img>
         <input id="vol-control" type="range" min="0" max="100" step="1" value="100" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)" style="width: 200px; float: left; margin-top:5px;"></input>
