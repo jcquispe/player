@@ -31,10 +31,12 @@
             if(playing){
                 $("#player")[0].pause();
                 playing = false;
+                $("#yalp").attr("src", "http://lapaz.fm/img/player/p1.png");
                 $("#animacion").hide();
             }else{
                 $("#player")[0].play();
                 playing = true;
+                $("#yalp").attr("src", "http://lapaz.fm/img/player/s1.png");
                 $("#animacion").show();
             }
             
@@ -95,7 +97,7 @@
     </div>
     <div class="col-lg-8 col-md-8 col-sm-7  col-xs-5" style="color: #fff; height:100%;">
         <p style="font-size:14px; margin:0 !important;">FM La Paz</p>
-        <hr style="color: #5CA4FF !important; margin: 5px !important;">
+        <hr style="color: #5CA4FF !important; margin-top: 5px !important; margin-bottom: 5px !important;">
         <span style="font-size:20px;" id="10203040302010">ARTISTA</span> - 
         <span style="font-size:20px;" id="mnbvcxzqaz">Canci&oacute;n</span><br>
         <img id="vol" style="width:20px; float:left;" src="http://lapaz.fm/img/player/v1.png"></img>
