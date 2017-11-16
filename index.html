@@ -4,14 +4,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function(){
+        var playing = false;
+        var mute = false;
+        update();
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             $("#vol-control").hide();
-            $("#player")[0].play();
+            $("#vol").hide();
+            $("#yalp").attr("src", "http://lapaz.fm/img/player/p1.png");
         }
-        var playing = true;
-        var mute = false;
-        $("#yalp").attr("src", "http://lapaz.fm/img/player/s1.png");
-        update();
+        else{
+            playing = true;
+            $("#yalp").attr("src", "http://lapaz.fm/img/player/s1.png");
+        }
         setInterval(function(){
             if(playing){
                 update();
